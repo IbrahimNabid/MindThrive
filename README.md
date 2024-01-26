@@ -2,6 +2,8 @@
 
 **MindThrive** stands as a beacon of mental health literacy and awareness, championing user-friendly accessibility and critical importance. Crafted with HTML, CSS, JavaScript, and Bootstrap, it serves as a comprehensive resource hub for understanding mental health nuances.
 
+Access the website here: https://mentalwellnessproject.netlify.app/
+
 ## Features
 
 - **Informative Interface:** Delve into the fundamentals of mental health, exploring common disorders, debunking myths, and embracing self-care strategies.
