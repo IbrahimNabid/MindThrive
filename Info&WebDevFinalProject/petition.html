@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindThrive: Food for your Mind</title>
+  <link rel="icon" href="assets/mentalhealthpic1.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-item">
+        <h1 id="title">MindThrive</h1>
+        <h5 id="slogan">Nurturing Your Mental Wellness Journey</h5>
+      </div>
+      <div class="header-item">
+        <div class="navbar">
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="petition.html">Sign our Petition!</a></li>
+            <li><button id="theme-button">Dark Mode On/Off 🌛</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="petition" id="petition">
+    <h2>Sign This Petition!</h2>
+    <p>In a world where mental health often takes a backseat, it's crucial to spread awareness and create change. By signing the petition below, you can contribute to a cause promoting understanding, support, and resources. Mental health is as vital as physical well-being, yet stigma persists, hindering progress. Together, we can dismantle these barriers, prioritize mental health and advocate for more resources and awareness. Sign today, and make a significant impact. </p>
+    <br>
+    <div class="petition-container">
+
+      <div class="signatures" id="signaturesSection">
+        <p>&#128227 IBRAHIM FROM THE BRONX SUPPORTS MENTAL HEALTH AWARENESS.</p>
+        <p>&#128227 AMY FROM THE BRONX SUPPORTS MENTAL HEALTH AWARENESS.</p>
+      </div>
+    </div>
+
+    <!-- Sign Petition Form -->
+    <div id="form">
+      <form id="sign-petition" title="sign-petition">
+        <!-- inputs go here -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="hometown">Hometown:</label>
+        <input type="text" id="hometown" name="hometown" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <br>
+        <!-- Sign Now Button -->
+        <button id="sign-now-button">Sign Now</button>
+      </form>
+    </div>
+
+  </div>
+
+  <footer id="footer">
+    <p>© 2023 MindThrive. All rights reserved.</p>
+  </footer>
+
+  <script src="petition.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>MindThrive: Food for your Mind</title>
+  <link rel="icon" href="assets/mentalhealthpic1.png">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="header-item">
+        <h1 id="title">MindThrive</h1>
+        <h5 id="slogan">Nurturing Your Mental Wellness Journey</h5>
+      </div>
+      <div class="header-item">
+        <div class="navbar">
+          <ul>
+            <li><a href="index.html">About</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="petition.html">Sign our Petition!</a></li>
+            <li><button id="theme-button">Dark Mode On/Off 🌛</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <h1>Welcome to our News Page!</h1>
+  <p>Stay informed about the latest news on Mental Health and Wellness.</p>
+  <br>
+  <h2>Staying Informed is Important</h2>
+  <p>Maintaining good mental health is crucial for overall well-being. It affects how we think, feel, and act, influencing our daily lives and relationships. Stay updated with the latest news to prioritize your mental health.</p>
+  <br>
+  <p> Click the button below to generate the latest news about Mental Health and Wellness! <p>
+  <button id="getNewsButton">Generate Latest Health News</button>
+  <div id="news"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const apiUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=health&api-key=EH3MzD1yUGQFS5M4kGyA4Xap7R8WCrH9';
+  const resultContainer = document.getElementById('news');
+  const getNewsButton = document.getElementById('getNewsButton');
+
+  getNewsButton.addEventListener('click', async () => {
+    try {
+      const response = await fetch(apiUrl + '&q=mental+health');
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      let htmlResponse = '';
+
+      for (let doc of data.response.docs) {
+        const title = doc.headline.main;
+        const snippet = doc.snippet;
+        const articleLink = doc.web_url;
+
+        htmlResponse += `
+          <div>
+            <h2>${title}</h2>
+            <p>${snippet}</p>
+            <a href="${articleLink}" target="_blank">Read More</a>
+          </div>
+        `;
+      }
+
+      resultContainer.innerHTML = htmlResponse;
+    } catch (error) {
+      resultContainer.innerHTML = 'Error: ' + error;
+    }
+  });
+});
+
+  </script>
+
+<footer id="footer">
+    <p>© 2023 MindThrive. All rights reserved.</p>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>
+
